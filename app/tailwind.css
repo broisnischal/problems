@@ -2,26 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-    font-family: 'timesnewroman';
-    src: url('../public/fonts/times new roman.ttf') format('truetype');
+  font-family: "timesnewroman";
+  src: url("./fonts/times new roman.ttf") format("truetype");
 }
 
-
 ::-webkit-scrollbar {
-    width: 1px;
-    height: 1px;
+  width: 1px;
+  height: 1px;
 }
 
 ::-webkit-scrollbar-track {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 1px;
+  background: #888;
+  border-radius: 1px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 }

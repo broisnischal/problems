@@ -3,7 +3,10 @@ export default function Favorites() {
     <div>
       <h1>Index</h1>
 
-      <p>Here you will find the list of problem that i have encountered.</p>
+      <p className="text-2xl ">
+        Here you will find the list of problem that i have encountered. on each
+        year. testi
+      </p>
     </div>
   );
 }

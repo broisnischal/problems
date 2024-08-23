@@ -4,12 +4,18 @@ import {
 } from "@remix-run/dev";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-import mdx from "@mdx-js/rollup"
-import { flatRoutes } from "remix-flat-routes"
+import mdx from "@mdx-js/rollup";
+import { flatRoutes } from "remix-flat-routes";
+import remarkFrontmatter from "remark-frontmatter";
+import rehypeMeta from "rehype-meta";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import rehypeHighlight from "rehype-highlight";
 
 export default defineConfig({
   plugins: [
     mdx({
+      remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+      rehypePlugins: [rehypeMeta, rehypeHighlight],
     }),
     remixCloudflareDevProxy(),
     remix({
@@ -18,8 +24,8 @@ export default defineConfig({
         v3_relativeSplatPath: true,
         v3_throwAbortReason: true,
       },
-      routes: async defineRoutes => {
-        return flatRoutes('routes', defineRoutes)
+      routes: async (defineRoutes) => {
+        return flatRoutes("routes", defineRoutes);
       },
     }),
     tsconfigPaths(),
